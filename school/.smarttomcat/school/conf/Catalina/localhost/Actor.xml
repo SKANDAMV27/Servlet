@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context docBase="C:\Users\skand\Downloads\apache-tomcat-9.0.38-windows-x64\apache-tomcat-9.0.38">
+  <Resources cacheMaxSize="10240">
+    <PreResources base="C:/Users/skand/OneDrive/Documents/Servlet/ActorInfoPortal/out/production/ActorInfoPortal" className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/WEB-INF/classes"/>
+    <PostResources base="C:/Users/skand/Downloads/apache-tomcat-9.0.38-windows-x64/apache-tomcat-9.0.38/lib/servlet-api.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/servlet-api.jar"/>
+  </Resources>
+</Context>
