@@ -28,6 +28,51 @@
 <div class="container mt-5">
     <h1>Welcome to the Application Portal</h1>
     <p>Please choose an option.</p>
+    <form action="marrageCertificateApplication" method="post" >
+        <div class="mb-3">
+            <label for="name" class="form-label">Groom Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="bride" class="form-label"> Bride Name</label>
+            <input type="text" class="form-control" id="bride" name="bride" required>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" name="location" placeholder="Marrage Location" required>
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" name="address" required>
+        </div>
+        <div class="mb-3">
+            <label for="religion" class="form-label">Religion</label>
+            <select class="form-control" id="religion" name="religion" required>
+                <option>Select</option>
+                <option>Hindu</option>
+                <option>Muslim</option>
+                <option>Christian</option>
+                <option>Sick</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+        <div class="mb-3">
+            <label for="witness" class="form-label">Witness 1</label>
+            <input type="text" class="form-control" id="witness" name="witness" required>
+        </div>
+        <div class="mb-3">
+            <label for="witness2" class="form-label">Witness 2</label>
+            <input type="text" class="form-control" id="witness2" name="witness2" required>
+        </div>
+        <div class="mb-3">
+            <label for="officer" class="form-label">Officer Present</label>
+            <input type="text" class="form-control" id="officer" name="officer" required>
+        </div>
+        <button type="submit" class="btn btn-success">Submit Report</button>
+    </form>
 
 </div>
 
