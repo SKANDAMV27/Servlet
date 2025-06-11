@@ -92,4 +92,18 @@ public class birthCertificateDTO implements Serializable {
     public void setHospital(String hospital) {
         this.hospital = hospital;
     }
+
+    @Override
+    public String toString() {
+        return "birthCertificateDTO{" +
+                "Id=" + Id +
+                ", name='" + name + '\'' +
+                ", father='" + father + '\'' +
+                ", mother='" + mother + '\'' +
+                ", date=" + date +
+                ", Doctor='" + Doctor + '\'' +
+                ", nurse='" + nurse + '\'' +
+                ", hospital='" + hospital + '\'' +
+                '}';
+    }
 }

@@ -101,4 +101,19 @@ public class marriageApplicationDTO implements Serializable {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    @Override
+    public String toString() {
+        return "marriageApplicationDTO{" +
+                "growName='" + growName + '\'' +
+                ", brideName='" + brideName + '\'' +
+                ", location='" + location + '\'' +
+                ", address='" + address + '\'' +
+                ", relesion='" + relesion + '\'' +
+                ", date=" + date +
+                ", witness='" + witness + '\'' +
+                ", witness1='" + witness1 + '\'' +
+                ", officer='" + officer + '\'' +
+                '}';
+    }
 }

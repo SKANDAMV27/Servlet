@@ -1,6 +1,8 @@
 package com.xworkz.application.Servlet;
 
 import com.xworkz.application.DTO.marriageApplicationDTO;
+import com.xworkz.application.service.MarriageApplicationService;
+import com.xworkz.application.service.MarriageApplivationImp;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,7 +38,13 @@ public class marriageCertificateServlet extends HttpServlet {
         marriageApplicationDTO.setWitness1(witness2);
         marriageApplicationDTO.setOfficer(officer);
 
+        System.out.println(marriageApplicationDTO);
+
         req.setAttribute("marriageApplicationDTO",marriageApplicationDTO);
+
+        MarriageApplicationService marriageApplicationService = new MarriageApplivationImp();
+        marriageApplicationService.MarriageApplicationValidation(marriageApplicationDTO);
+
 
 
     }

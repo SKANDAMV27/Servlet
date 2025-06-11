@@ -101,4 +101,19 @@ public class deathCertificateDTO implements Serializable {
     public void setDeath(String death) {
         this.death = death;
     }
+
+    @Override
+    public String toString() {
+        return "deathCertificateDTO{" +
+                "name='" + name + '\'' +
+                ", cause='" + cause + '\'' +
+                ", date=" + date +
+                ", age=" + age +
+                ", certified='" + certified + '\'' +
+                ", hospital='" + hospital + '\'' +
+                ", death='" + death + '\'' +
+                ", gender='" + gender + '\'' +
+                ", marks='" + marks + '\'' +
+                '}';
+    }
 }

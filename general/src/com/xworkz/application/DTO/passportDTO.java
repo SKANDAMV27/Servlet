@@ -108,4 +108,20 @@ public class passportDTO implements Serializable {
     public void setReferance(int referance){
         this.referance=referance;
     }
+
+    @Override
+    public String toString() {
+        return "passportDTO{" +
+                "name='" + name + '\'' +
+                ", aadhar=" + aadhar +
+                ", address='" + address + '\'' +
+                ", panNo='" + panNo + '\'' +
+                ", country='" + country + '\'' +
+                ", state='" + state + '\'' +
+                ", city='" + city + '\'' +
+                ", pincode=" + pincode +
+                ", passportType='" + passportType + '\'' +
+                ", referance=" + referance +
+                '}';
+    }
 }

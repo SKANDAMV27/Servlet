@@ -61,4 +61,15 @@ public class drivingLicenseDTO implements Serializable {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "drivingLicenseDTO{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", date=" + date +
+                ", mobile=" + mobile +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

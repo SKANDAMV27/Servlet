@@ -1,6 +1,8 @@
 package com.xworkz.application.Servlet;
 
 import com.xworkz.application.DTO.drivingLicenseDTO;
+import com.xworkz.application.service.DrivingLicenseImp;
+import com.xworkz.application.service.DrivingLicenseService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,7 +30,12 @@ public class drivingLicenseServlet extends HttpServlet {
         drivingLicenseDTO.setMobile(Long.parseLong(mobile));
         drivingLicenseDTO.setType(type);
 
+        System.out.println(drivingLicenseDTO);
+
         req.setAttribute("drivingLicenseDTO",drivingLicenseDTO);
+
+        DrivingLicenseService drivingLicenseService = new DrivingLicenseImp();
+        drivingLicenseService.DrivingLicenseVilidiate(drivingLicenseDTO);
 
     }
 }

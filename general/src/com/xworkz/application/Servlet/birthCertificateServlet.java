@@ -1,6 +1,8 @@
 package com.xworkz.application.Servlet;
 
 import com.xworkz.application.DTO.birthCertificateDTO;
+import com.xworkz.application.service.BirthCertificateImp;
+import com.xworkz.application.service.BirthCertificateService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,9 +37,13 @@ public class birthCertificateServlet extends HttpServlet {
         birthCertificateDTO.setNurse(nurse);
         birthCertificateDTO.setHospital(hospital);
 
+        System.out.println(birthCertificateDTO);
+
         req.setAttribute("birthCertificateDTO",birthCertificateDTO);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("birthCertificateResult.jsp");
-        requestDispatcher.forward(req,resp);
+
+        BirthCertificateService birthCertificateService = new BirthCertificateImp();
+        birthCertificateService.BirthCertificateValidiate(birthCertificateDTO);
+
 
 
     }

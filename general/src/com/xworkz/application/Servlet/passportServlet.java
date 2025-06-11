@@ -1,6 +1,8 @@
 package com.xworkz.application.Servlet;
 
 import com.xworkz.application.DTO.passportDTO;
+import com.xworkz.application.service.PassportImp;
+import com.xworkz.application.service.PassportService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,7 +39,12 @@ public class passportServlet extends HttpServlet {
         passportDTO.setPassportType(passportType);
         passportDTO.setReferance(Integer.parseInt(refernce));
 
+        System.out.println(passportDTO);
+
         req.setAttribute("passportDTO", passportDTO);
+
+        PassportService passportService = new PassportImp();
+        passportService.PassportValidiation(passportDTO);
 
     }
 }

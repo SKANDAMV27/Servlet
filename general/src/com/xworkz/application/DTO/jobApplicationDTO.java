@@ -70,4 +70,16 @@ public class jobApplicationDTO implements Serializable {
     public void setExperence(String experence) {
         this.experence = experence;
     }
+
+    @Override
+    public String toString() {
+        return "jobApplicationDTO{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", education='" + education + '\'' +
+                ", skills='" + skills + '\'' +
+                ", salary=" + salary +
+                ", experence='" + experence + '\'' +
+                '}';
+    }
 }
