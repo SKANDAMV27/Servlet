@@ -19,7 +19,7 @@ public class passportServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
-        String aadarno = req.getParameter("number");
+        String aadarno = req.getParameter("number");;
         String address = req.getParameter("address");
         String panNo = req.getParameter("PanNo");
         String country = req.getParameter("Country");
