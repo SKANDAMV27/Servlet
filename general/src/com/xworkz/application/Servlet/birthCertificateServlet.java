@@ -1,6 +1,8 @@
 package com.xworkz.application.Servlet;
 
 import com.xworkz.application.DTO.birthCertificateDTO;
+import com.xworkz.application.Repositry.BirthCertificateRepositry;
+import com.xworkz.application.Repositry.BirthCertificateRepositryImp;
 import com.xworkz.application.service.BirthCertificateImp;
 import com.xworkz.application.service.BirthCertificateService;
 
@@ -43,6 +45,9 @@ public class birthCertificateServlet extends HttpServlet {
 
         BirthCertificateService birthCertificateService = new BirthCertificateImp();
         birthCertificateService.BirthCertificateValidiate(birthCertificateDTO);
+
+        BirthCertificateRepositry birthCertificateRepositry = new BirthCertificateRepositryImp();
+        birthCertificateRepositry.save(birthCertificateDTO);
 
 
 

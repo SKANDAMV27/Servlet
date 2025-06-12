@@ -1,6 +1,8 @@
 package com.xworkz.application.Servlet;
 
 import com.xworkz.application.DTO.marriageApplicationDTO;
+import com.xworkz.application.Repositry.MarriageApplicationRepositry;
+import com.xworkz.application.Repositry.MarrigeApplicationRepositryImp;
 import com.xworkz.application.service.MarriageApplicationService;
 import com.xworkz.application.service.MarriageApplivationImp;
 
@@ -11,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Date;
 
 @WebServlet(urlPatterns = "/marrageCertificateApplication",loadOnStartup = 1)
 public class marriageCertificateServlet extends HttpServlet {
@@ -44,6 +45,9 @@ public class marriageCertificateServlet extends HttpServlet {
 
         MarriageApplicationService marriageApplicationService = new MarriageApplivationImp();
         marriageApplicationService.MarriageApplicationValidation(marriageApplicationDTO);
+
+        MarriageApplicationRepositry marriageApplicationRepositry = new MarrigeApplicationRepositryImp();
+        marriageApplicationRepositry.save(marriageApplicationDTO);
 
 
 

@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class birthCertificateDTO implements Serializable {
+public class
+birthCertificateDTO implements Serializable {
     private int Id;
     private String name;
     private String father;

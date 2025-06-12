@@ -1,6 +1,8 @@
 package com.xworkz.application.Servlet;
 
 import com.xworkz.application.DTO.passportDTO;
+import com.xworkz.application.Repositry.PassportRepositry;
+import com.xworkz.application.Repositry.PassportRepositryImp;
 import com.xworkz.application.service.PassportImp;
 import com.xworkz.application.service.PassportService;
 
@@ -45,6 +47,9 @@ public class passportServlet extends HttpServlet {
 
         PassportService passportService = new PassportImp();
         passportService.PassportValidiation(passportDTO);
+
+        PassportRepositry passportRepositry = new PassportRepositryImp();
+        passportRepositry.save(passportDTO);
 
     }
 }

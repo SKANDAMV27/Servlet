@@ -1,6 +1,8 @@
 package com.xworkz.application.Servlet;
 
 import com.xworkz.application.DTO.jobApplicationDTO;
+import com.xworkz.application.Repositry.JobApplicationRepositry;
+import com.xworkz.application.Repositry.JobApplicationRepositryImp;
 import com.xworkz.application.service.JobApplicationImp;
 import com.xworkz.application.service.JobApplicationService;
 
@@ -38,6 +40,9 @@ public class jobApplicationServlet extends HttpServlet {
 
         JobApplicationService jobApplicationService = new JobApplicationImp();
         jobApplicationService.JobApplicationValidiation( jobDTO);
+
+        JobApplicationRepositry jobApplicationRepositry = new JobApplicationRepositryImp();
+        jobApplicationRepositry.save(jobDTO);
 
 
 

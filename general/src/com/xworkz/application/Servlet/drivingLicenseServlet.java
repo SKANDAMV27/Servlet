@@ -1,6 +1,8 @@
 package com.xworkz.application.Servlet;
 
 import com.xworkz.application.DTO.drivingLicenseDTO;
+import com.xworkz.application.Repositry.DrivingLicenseRepositry;
+import com.xworkz.application.Repositry.DrivingLicienceRepositryImp;
 import com.xworkz.application.service.DrivingLicenseImp;
 import com.xworkz.application.service.DrivingLicenseService;
 
@@ -36,6 +38,9 @@ public class drivingLicenseServlet extends HttpServlet {
 
         DrivingLicenseService drivingLicenseService = new DrivingLicenseImp();
         drivingLicenseService.DrivingLicenseVilidiate(drivingLicenseDTO);
+
+        DrivingLicenseRepositry drivingLicenseRepositry = new DrivingLicienceRepositryImp();
+        drivingLicenseRepositry.save(drivingLicenseDTO);
 
     }
 }

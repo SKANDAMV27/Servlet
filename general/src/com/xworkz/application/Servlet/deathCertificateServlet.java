@@ -1,6 +1,8 @@
 package com.xworkz.application.Servlet;
 
 import com.xworkz.application.DTO.deathCertificateDTO;
+import com.xworkz.application.Repositry.DeathCertificateRepositry;
+import com.xworkz.application.Repositry.DeathCertificateRepositryImp;
 import com.xworkz.application.service.DeathCertificateImp;
 import com.xworkz.application.service.DeathCertificateService;
 
@@ -43,5 +45,8 @@ public class deathCertificateServlet extends HttpServlet {
 
         DeathCertificateService deathCertificateService = new DeathCertificateImp();
         deathCertificateService.DeathCertificateValidiate(deathCertificateDTO);
+
+        DeathCertificateRepositry deathCertificateRepositry = new DeathCertificateRepositryImp();
+        deathCertificateRepositry.save(deathCertificateDTO);
     }
 }
