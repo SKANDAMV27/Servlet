@@ -5,6 +5,7 @@ import com.xworkz.application.DTO.passportDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class PassportRepositryImp implements PassportRepositry{
     @Override
@@ -17,6 +18,9 @@ public class PassportRepositryImp implements PassportRepositry{
             String username = "root";
             String password = "9353193240";
             Connection connection=DriverManager.getConnection(url,username,password);
+            String sql = "Insert Into passport_details values(0,'"+passportDTO.getName()+"','"+passportDTO.getAadhar()+"','"+passportDTO.getAddress()+"','"+passportDTO.getPanNo()+"','"+passportDTO.getCountry()+"','"+passportDTO.getCity()+"','"+passportDTO.getPincode()+"','"+passportDTO.getPassportType()+"','"+passportDTO.getReferance()+"','"+passportDTO.getState()+"')";
+            Statement statement=connection.createStatement();
+            statement.executeUpdate(sql);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         } catch (SQLException e) {

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class passportDTO implements Serializable {
     private String name;
-    private int aadhar;
+    private long aadhar;
     private String address;
     private String panNo;
     private String country;
@@ -39,11 +39,11 @@ public class passportDTO implements Serializable {
         this.name = name;
     }
 
-    public int getAadhar() {
+    public long getAadhar() {
         return aadhar;
     }
 
-    public void setAadhar(int aadhar) {
+    public void setAadhar(long aadhar) {
         this.aadhar = aadhar;
     }
 

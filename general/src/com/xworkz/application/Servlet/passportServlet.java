@@ -31,7 +31,7 @@ public class passportServlet extends HttpServlet {
 
         passportDTO passportDTO = new passportDTO();
         passportDTO.setName(name);
-        passportDTO.setAadhar(Integer.parseInt(aadarno));
+        passportDTO.setAadhar(Long.parseLong(aadarno));
         passportDTO.setAddress(address);
         passportDTO.setPanNo(panNo);
         passportDTO.setCountry(country);
