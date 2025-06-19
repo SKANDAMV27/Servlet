@@ -46,8 +46,22 @@ public class birthCertificateServlet extends HttpServlet {
         BirthCertificateService birthCertificateService = new BirthCertificateImp();
         birthCertificateService.BirthCertificateValidiate(birthCertificateDTO);
 
-        BirthCertificateRepositry birthCertificateRepositry = new BirthCertificateRepositryImp();
-        birthCertificateRepositry.save(birthCertificateDTO);
+
+
+
+        String result = birthCertificateService.BirthCertificateValidiate(birthCertificateDTO);
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("birthCertificate.jsp");
+
+
+        req.setAttribute("Message",result);
+
+        if(!result.equals("saved"))
+        {
+            req.setAttribute("dto",birthCertificateDTO);
+        }
+
+
+        requestDispatcher.forward(req,resp);
 
 
 

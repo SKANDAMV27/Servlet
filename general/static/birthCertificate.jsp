@@ -45,12 +45,12 @@
 
             </div>
             <div class="mb-3">
-                <label for="father" class="form-label">Father Name</label>
-                <input type="text" class="form-control" id="father" name="father" placeholder="Father Name" required>
+                <label for="father" class="form-label">Father Name</label> <span>${Message}</span>
+                <input type="text" class="form-control" id="father" name="father" placeholder="Father Name" value="${dto.father}" required>
             </div>
             <div class="mb-3">
-                <label for="mother" class="form-label">Mother Name</label>
-                <input type="text" class="form-control" id="mother" name="mother" required>
+                <label for="mother" class="form-label">Mother Name</label><span>${Message}</span>
+                <input type="text" class="form-control" id="mother" name="mother" value="${dto.mother}" required>
             </div>
             <div class="mb-3">
                 <label for="date" class="form-label">Date and Time</label>
