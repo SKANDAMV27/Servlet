@@ -24,6 +24,7 @@
     <a class="btn btn-primary" href="jobApplication.jsp">Job Application</a>
     <a class="btn btn-primary" href="marriageCertificate.jsp">Marriage Certificate</a>
     <a class="btn btn-primary" href="passport.jsp">passport Appliocation</a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav" aria-controls="navbarNav"
             aria-expanded="false" aria-label="Toggle navigation">

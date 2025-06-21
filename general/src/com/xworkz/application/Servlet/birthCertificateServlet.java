@@ -50,6 +50,8 @@ public class birthCertificateServlet extends HttpServlet {
 
 
         String result = birthCertificateService.BirthCertificateValidiate(birthCertificateDTO);
+
+        //chaining
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("birthCertificate.jsp");
 
 
@@ -61,9 +63,32 @@ public class birthCertificateServlet extends HttpServlet {
         }
 
 
+        String result1 = birthCertificateService.BirthCertificateValidiate(birthCertificateDTO);
+
+
+        req.setAttribute("Message1",result1);
+        if(!result1.equals("saved"))
+        {
+            req.setAttribute("dto",birthCertificateDTO);
+        }
+
         requestDispatcher.forward(req,resp);
 
 
 
     }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String Id = req.getParameter("nameid");
+
+        int convertor = Integer.parseInt(Id);
+
+
+
+
+    }
 }
+
+
+

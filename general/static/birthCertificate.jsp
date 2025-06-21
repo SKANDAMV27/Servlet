@@ -45,11 +45,11 @@
 
             </div>
             <div class="mb-3">
-                <label for="father" class="form-label">Father Name</label> <span>${Message}</span>
+                <label for="father" class="form-label">Father Name</label> <span style="color:red">${Message}</span>
                 <input type="text" class="form-control" id="father" name="father" placeholder="Father Name" value="${dto.father}" required>
             </div>
             <div class="mb-3">
-                <label for="mother" class="form-label">Mother Name</label><span>${Message}</span>
+                <label for="mother" class="form-label">Mother Name</label><span style="color:red">${Message1}</span>
                 <input type="text" class="form-control" id="mother" name="mother" value="${dto.mother}" required>
             </div>
             <div class="mb-3">
