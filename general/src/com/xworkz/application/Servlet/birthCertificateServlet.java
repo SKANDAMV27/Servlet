@@ -84,7 +84,7 @@ public class birthCertificateServlet extends HttpServlet {
 
         int convertor = Integer.parseInt(Id);
 
-
+        if
 
 
     }
