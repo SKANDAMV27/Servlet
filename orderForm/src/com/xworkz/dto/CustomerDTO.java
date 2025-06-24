@@ -1,6 +1,7 @@
 package com.xworkz.dto;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class CustomerDTO implements Serializable {
@@ -80,7 +81,7 @@ public class CustomerDTO implements Serializable {
         this.pincode = pincode;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 

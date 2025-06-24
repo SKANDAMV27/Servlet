@@ -33,14 +33,14 @@
 <h1>Costomer Details!</h1>
 <p>Fill The Form</p>
 <span>
-    <form action="customer" method="post">
+    <form action="customer" method="post"> <span style="color:red">${error}</span><span style="color:green">${notError}</span>
         <diV>
         <label for="nameId">Name</label>
-            <input type="text" id="nameId" name="nameName" placeholder="Enter The Name">
+            <input type="text" id="nameId" name="nameName" placeholder="Enter The Name" value="${dto.name}">
         </diV>
         <div>
             <label for="emailId">Email</label>
-            <input type="email" id="emailId" name="emailEmail" placeholder="Enter The Email ID">
+            <input type="email" id="emailId" name="emailEmail" placeholder="Enter The Email ID" value="${dto.email}">
         </div>
         <div>
             <label for="mobileId">Mobile Number</label>

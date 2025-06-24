@@ -6,6 +6,7 @@ import com.xworkz.reporistry.CustomerRepositryImp;
 import com.xworkz.servece.CustomerService;
 import com.xworkz.servece.CustomerServiceImplementation;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +25,7 @@ public class CustomerServlet extends HttpServlet {
         String house=req.getParameter("houseHouse");
         String area=req.getParameter("areaArea");
         String city=req.getParameter("cityCity");
-        String pincode=req.getParameter("pincodePincode");
+        String pinCode=req.getParameter("pincodePincode");
         String date=req.getParameter("dateDate");
 
         CustomerDTO customerDTO = new CustomerDTO();
@@ -34,25 +35,33 @@ public class CustomerServlet extends HttpServlet {
         customerDTO.setHouse(house);
         customerDTO.setArea(area);
         customerDTO.setCity(city);
-        customerDTO.setPincode(Long.parseLong(pincode));
+        customerDTO.setPincode(Long.parseLong(pinCode));
         customerDTO.setDate(LocalDate.parse(date));
-
         System.out.println(customerDTO);
 
-        req.setAttribute("customerDTO",customerDTO);
-
         CustomerService customerService = new CustomerServiceImplementation();
-        customerService.Validation(customerDTO);
+        String result= customerService.validation(customerDTO);
+        if(result.equals("false")){
+            System.out.println("name is invalid");
+            String error="name is invalid";
+            req.setAttribute("error",error);
+            req.setAttribute("dto",customerDTO);
+            RequestDispatcher requestDispatcher=req.getRequestDispatcher("customer.jsp");
+            requestDispatcher.forward(req,resp);
+        } else if (result.equals("false")) {
+            System.out.println("Invalid Email");
+            String emailError="Email Is Invalid";
+            req.setAttribute("emailError",emailError);
+            req.setAttribute("dto",customerDTO);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("customer.jsp");
+            requestDispatcher.forward(req,resp);
 
-        System.out.println(customerService);
-
-        CustomerRepositry customerRepositry = new CustomerRepositryImp();
-        customerRepositry.Save(customerDTO);
-
-        System.out.println(customerRepositry);
-
-
-
-
+        } else {
+            System.out.println("Sucuss Submitted");
+            String notError="Submitted Sucessfully";
+            req.setAttribute("notError",notError);
+            RequestDispatcher requestDispatcher=req.getRequestDispatcher("customer.jsp");
+            requestDispatcher.forward(req,resp);
+        }
     }
 }
