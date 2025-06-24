@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Date;
 import java.time.LocalDate;
 
 @WebServlet(urlPatterns = "/customer")
@@ -36,7 +37,7 @@ public class CustomerServlet extends HttpServlet {
         customerDTO.setArea(area);
         customerDTO.setCity(city);
         customerDTO.setPincode(Long.parseLong(pinCode));
-        customerDTO.setDate(LocalDate.parse(date));
+        customerDTO.setDate(Date.valueOf(LocalDate.parse(date)));
         System.out.println(customerDTO);
 
         CustomerService customerService = new CustomerServiceImplementation();

@@ -20,12 +20,11 @@ public class CustomerRepositryImp implements CustomerRepositry{
 //            String sql = "Insert Into order_form values(0,'"+customerDTO.getName()+"','"+customerDTO.getEmail()+"','"+customerDTO.getMobile()+"','"+customerDTO.getHouse()+"','"+customerDTO.getArea()+"','"+customerDTO.getCity()+"','"+customerDTO.getPincode()+"','"+customerDTO.getDate()+"')";
 //            Statement statement = connection.createStatement();
 //            statement.executeUpdate(sql);
-            String sql="Insert Into order_form values(?,?,?,?,?,?,?,?)";
+            String sql="Insert Into order_form (name, email, mobile, house, area, city, pincode, date)  values(?,?,?,?,?,?,?,?)";
             PreparedStatement preparedStatement=connection.prepareStatement(sql);
-            preparedStatement.setInt(1,0);
-            preparedStatement.setString(2,customerDTO.getName());
-            preparedStatement.setString(3, customerDTO.getEmail());
-            preparedStatement.setDouble(4,customerDTO.getMobile());
+            preparedStatement.setString(1,customerDTO.getName());
+            preparedStatement.setString(2, customerDTO.getEmail());
+            preparedStatement.setDouble(3,customerDTO.getMobile());
             preparedStatement.setString(4,customerDTO.getHouse());
             preparedStatement.setString(5, customerDTO.getArea());
             preparedStatement.setString(6,customerDTO.getCity());

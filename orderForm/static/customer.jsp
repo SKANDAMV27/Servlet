@@ -39,12 +39,13 @@
             <input type="text" id="nameId" name="nameName" placeholder="Enter The Name" value="${dto.name}">
         </diV>
         <div>
-            <label for="emailId">Email</label>
+            <label for="emailId">Email</label><span style="color:red">${emailError}</span>
+            <span style="color:green">${notError}</span>
             <input type="email" id="emailId" name="emailEmail" placeholder="Enter The Email ID" value="${dto.email}">
         </div>
         <div>
             <label for="mobileId">Mobile Number</label>
-            <input type="number" id="mobileId" name="mobileMobile" placeholder="Enter The Mobile Number">
+            <input type="number" id="mobileId" name="mobileMobile" placeholder="Enter The Mobile Number" value="${dto.mobile}">
         </div>
         <div>
             <label for="houseId">House Number/Name</label>

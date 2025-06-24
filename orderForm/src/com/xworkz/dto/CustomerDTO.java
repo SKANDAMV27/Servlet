@@ -12,13 +12,13 @@ public class CustomerDTO implements Serializable {
     private String area;
     private String city;
     private long pincode;
-    private LocalDate date;
+    private Date date;
 
     public CustomerDTO(){
         System.out.println("No args Customer DTO Constructor........");
     }
 
-    public CustomerDTO(String name, String email, long mobile, String house, String area, String city, long pincode, LocalDate date) {
+    public CustomerDTO(String name, String email, long mobile, String house, String area, String city, long pincode, Date date) {
         this.name = name;
         this.email = email;
         this.mobile = mobile;
@@ -85,7 +85,7 @@ public class CustomerDTO implements Serializable {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
