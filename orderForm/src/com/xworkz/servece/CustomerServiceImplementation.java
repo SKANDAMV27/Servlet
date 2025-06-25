@@ -19,4 +19,16 @@ public class CustomerServiceImplementation implements CustomerService{
         return "true";
     }
 
+    @Override
+    public CustomerDTO searchAll(int Id) {
+        if(Id<=0){
+            return null;
+        }
+        else {
+            CustomerRepositry customerRepositry = new CustomerRepositryImp();
+
+
+        }
+        return null;
+    }
 }
