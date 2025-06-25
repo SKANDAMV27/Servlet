@@ -4,6 +4,7 @@ import com.xworkz.login.dto.SignInDTO;
 import com.xworkz.login.service.SignInService;
 import com.xworkz.login.service.SignInServiceImp;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,9 +28,15 @@ public class SignInServlet extends HttpServlet {
         boolean result=signInService.validiation(Integer.parseInt(userId),passWord);
 
         if(result){
-            HttpSession httpSession = req.getSession();
-            httpSession.getAttribute("userId");
+             req.setAttribute("success","Login SucessFully");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
+            requestDispatcher.forward(req,resp);
 
+        }
+        else {
+            req.setAttribute("error","Invalid User Name And Password.");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("signIn.jsp");
+            requestDispatcher.forward(req,resp);
         }
 
 

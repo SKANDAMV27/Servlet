@@ -29,6 +29,7 @@
 <h1>Wel-Come..</h1>
 <form action="signIn" method="post">
     <div class="form-group">
+        <span style="color:red">${error}</span>
         <label for="IdUser">UserId</label>
         <input type="text" class="form-control" id="IdUser" aria-describedby="emailHelp" placeholder="User ID" name="idID">
 
