@@ -1,60 +1,64 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.jsp"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="index.jsp">MyApp</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.jsp.jsp">Home</a>
+                    <a class="nav-link" href="index.jsp">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="signIn.jsp">signIn</a>
+                    <a class="nav-link" href="signIn.jsp">Sign In</a>
                 </li>
             </ul>
-
         </div>
     </div>
 </nav>
-<h1>Wel-Come..</h1>
-<form action="signup" method="post">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <span style="color:red">${error}</span>
-        <span style="color:red">${error6}</span>
-        <span style="color:green">${correct}</span>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="emaiEmail" value="${dto.email}" >
 
-    </div>
-    <div class="form-group">
-        <label for="username">User ID</label>
-        <span style="color:red">${error1}</span>
-        <span style="color:red">${error5}</span>
-        <input type="number" class="form-control" id="username" name="userUser" value="${dto.userId}">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <span style="color:red">${error3}</span>
-        <input type="password" class="form-control" id="exampleInputPassword1" name="passwordPassword" value="${dto.password}">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword2">Conform Password</label>
-        <span style="color:red">${error4}</span>
-        <input type="password" class="form-control" id="exampleInputPassword2" name="conformConform" value="${dto.conformPassword}">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<div class="container col-md-6 bg-white p-4 rounded shadow-sm">
+    <h3 class="mb-4 text-center text-primary">Sign Up</h3>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <form action="signup" method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="emaiEmail" placeholder="Enter Email" value="${dto.email}">
+            <div class="text-danger">${error}</div>
+            <div class="text-danger">${error6}</div>
+            <div class="text-success">${correct}</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="username" class="form-label">User ID</label>
+            <input type="number" class="form-control" id="username" name="userUser" placeholder="Enter User ID" value="${dto.userId}">
+            <div class="text-danger">${error1}</div>
+            <div class="text-danger">${error5}</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="passwordPassword" placeholder="Enter Password" value="${dto.password}">
+            <div class="text-danger">${error3}</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword2" name="conformConform" placeholder="Re-enter Password" value="${dto.conformPassword}">
+            <div class="text-danger">${error4}</div>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Sign Up</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

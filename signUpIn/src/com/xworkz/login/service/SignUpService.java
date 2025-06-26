@@ -6,4 +6,6 @@ import java.sql.SQLException;
 
 public interface SignUpService {
     String validation(SignUpDTO signUpDTO) throws SQLException, ClassNotFoundException;
+
+    boolean checkValidation(int userId , String password);
 }

@@ -16,13 +16,13 @@ public class SignUpServiceImp implements SignUpService {
         int userId = signUpDTO.getUserId();
         String password = signUpDTO.getPassword();
         String conformPassword = signUpDTO.getConformPassword();
-        if (email == null || email.length() < 10 || !email.contains("@gmail.com") ) {
+        if (email == null || email.length() < 10 || !email.contains("@gmail.com")) {
             return "false";
-        } else if (userId<0) {
+        } else if (userId < 0) {
             return "falseuser";
-        } else if (password==null || !password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()]).{8,}$")|| password.length()<5) {
+        } else if (password == null || !password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()]).{8,}$") || password.length() < 5) {
             return "invalid";
-        } else if (conformPassword==null || !password.equals(conformPassword)) {
+        } else if (conformPassword == null || !password.equals(conformPassword)) {
             return "conformInvalid";
 
         } else if (signUpRepositry.existingUserID(userId)) {
@@ -36,5 +36,13 @@ public class SignUpServiceImp implements SignUpService {
             return "true";
 
         }
+    }
+
+    @Override
+    public boolean checkValidation(int userId, String password) {
+        SignUpRepositry signUpRepositry = new SignUpRepositryImp();
+        return signUpRepositry.validateLogi(userId,password);
+
+
     }
 }

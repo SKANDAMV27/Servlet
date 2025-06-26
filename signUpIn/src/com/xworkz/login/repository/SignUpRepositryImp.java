@@ -81,14 +81,24 @@ public class SignUpRepositryImp implements SignUpRepositry{
     }
 
     @Override
-    public boolean checkUserId(int userId) {
+    public boolean validateLogi(int userId, String password) {
+
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/formdb";
             String user = "root";
-            String password = "9353193240";
-            Connection connection=DriverManager.getConnection(url,user,password);
-            String sql ="";
+            String pasword = "9353193240";
+            Connection connection=DriverManager.getConnection(url,user,pasword);
+            String sql ="select user_Id from login_details where user_Id=? AND password=?";
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setInt(1,userId);
+            preparedStatement.setString(2,password);
+            ResultSet resultSet=preparedStatement.executeQuery();
+            if(resultSet.next()){
+                System.out.println("Invalid User Id");
+                return true;
+            }
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         } catch (SQLException e) {
@@ -98,7 +108,13 @@ public class SignUpRepositryImp implements SignUpRepositry{
     }
 
     @Override
-    public boolean checkEmai(String email) {
+    public boolean validateLogin(int userId, String password) {
         return false;
     }
+
+
 }
+
+
+
+

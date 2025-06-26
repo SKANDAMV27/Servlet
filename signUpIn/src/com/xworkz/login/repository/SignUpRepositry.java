@@ -11,7 +11,8 @@ public interface SignUpRepositry {
 
         public boolean existingEmail(String email) throws ClassNotFoundException;
 
-        public boolean checkUserId(int userId);
+        public boolean validateLogi(int userId,String password);
 
-        public boolean checkEmai(String email);
+
+        boolean validateLogin(int userId, String password);
 }
