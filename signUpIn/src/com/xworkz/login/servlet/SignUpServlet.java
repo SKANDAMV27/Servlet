@@ -40,9 +40,7 @@ public class SignUpServlet extends HttpServlet {
                 System.out.println("Invalid Valid Email ID............");
                 String error="Email Id Is Not Correct";
                 req.setAttribute("error",error);
-                req.setAttribute("dto",signUpDTO);
-                RequestDispatcher requestDispatcher = req.getRequestDispatcher("signUp.jsp");
-                requestDispatcher.forward(req,resp);
+
             } else if (result.equals("falseuser")) {
                 System.out.println("Invalid user Id ");
                 String error1 = "user Id Must Be More than 0";
@@ -66,13 +64,27 @@ public class SignUpServlet extends HttpServlet {
                 RequestDispatcher requestDispatcher = req.getRequestDispatcher("signUp.jsp");
                 requestDispatcher.forward(req,resp);
 
+            } else if (result.equals("existingUserId")) {
+                System.out.println("User Id is Already Existed");
+                String error5 ="User Id is already Existed";
+                req.setAttribute("error5",error5);
+                req.setAttribute("dto",signUpDTO);
+                RequestDispatcher requestDispatcher = req.getRequestDispatcher("signUp.jsp");
+                requestDispatcher.forward(req,resp);
+            } else if (result.equals("existingEmail")) {
+                System.out.println("Email Already Existed");
+                String error6 = "Email Alread Existed";
+                req.setAttribute("error6",error6);
+                req.setAttribute("dto",signUpDTO);
+                RequestDispatcher requestDispatcher = req.getRequestDispatcher("signUp.jsp");
+                requestDispatcher.forward(req,resp);
+
             } else{
                 System.out.println("Submit Sucessfully");
                 String correct = "Sucessfully Submitted";
                 req.setAttribute("correct",correct);
                 RequestDispatcher requestDispatcher = req.getRequestDispatcher("signUp.jsp");
                 requestDispatcher.forward(req,resp);
-
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

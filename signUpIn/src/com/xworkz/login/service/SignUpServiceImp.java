@@ -10,12 +10,13 @@ public class SignUpServiceImp implements SignUpService {
 
     @Override
     public String validation(SignUpDTO signUpDTO) throws SQLException, ClassNotFoundException {
+        SignUpRepositry signUpRepositry = new SignUpRepositryImp();
         System.out.println("Validiation.........................");
         String email = signUpDTO.getEmail();
         int userId = signUpDTO.getUserId();
         String password = signUpDTO.getPassword();
         String conformPassword = signUpDTO.getConformPassword();
-        if (email == null || email.length() < 10 || !email.contains("@gmail.com")) {
+        if (email == null || email.length() < 10 || !email.contains("@gmail.com") ) {
             return "false";
         } else if (userId<0) {
             return "falseuser";
@@ -24,8 +25,13 @@ public class SignUpServiceImp implements SignUpService {
         } else if (conformPassword==null || !password.equals(conformPassword)) {
             return "conformInvalid";
 
+        } else if (signUpRepositry.existingUserID(userId)) {
+            return "existingUserId";
+        } else if (signUpRepositry.existingEmail(email)) {
+            return "existingEmail";
+
         } else {
-            SignUpRepositry signUpRepositry = new SignUpRepositryImp();
+
             signUpRepositry.save(signUpDTO);
             return "true";
 

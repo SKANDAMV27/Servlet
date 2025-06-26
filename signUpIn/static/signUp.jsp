@@ -31,6 +31,7 @@
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <span style="color:red">${error}</span>
+        <span style="color:red">${error6}</span>
         <span style="color:green">${correct}</span>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="emaiEmail" value="${dto.email}" >
 
@@ -38,6 +39,7 @@
     <div class="form-group">
         <label for="username">User ID</label>
         <span style="color:red">${error1}</span>
+        <span style="color:red">${error5}</span>
         <input type="number" class="form-control" id="username" name="userUser" value="${dto.userId}">
     </div>
     <div class="form-group">
