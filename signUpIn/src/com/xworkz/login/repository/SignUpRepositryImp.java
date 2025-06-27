@@ -112,6 +112,60 @@ public class SignUpRepositryImp implements SignUpRepositry{
         return false;
     }
 
+    @Override
+    public boolean conformValidiation(String email) {
+        System.out.println("Dry Test For Email Validiation......");
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/formdb";
+            String user = "root";
+            String password = "9353193240";
+            Connection connection=DriverManager.getConnection(url,user,password);
+            String sql = "Select email from login_details where email=?";
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setString(1,email);
+            ResultSet resultSet=preparedStatement.executeQuery();
+            if(resultSet.next()){
+                System.out.println("Email Is already Existed");
+                return false;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return true;
+
+    }
+
+    @Override
+    public boolean restPasswordValidiation(String password, String email,String conformPassword) {
+        System.out.println("Dry Test For the password Reset.......");
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/formdb";
+            String user = "root";
+            String passwor = "9353193240";
+            Connection connection=DriverManager.getConnection(url,user,passwor);
+            String sql = "UPDATE login_details SET password=? WHERE email=?";
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setString(1,password);
+            preparedStatement.setString(2,email);
+
+            ResultSet resultSet =preparedStatement.executeQuery();
+            if(resultSet.next()){
+                System.out.println("Sucess fully");
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+
+    }
+
 
 }
 

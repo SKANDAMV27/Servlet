@@ -21,22 +21,17 @@
 
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
     <div class="card shadow-lg p-4 w-100" style="max-width: 400px;">
-        <h4 class="text-center mb-4 text-primary">Sign In</h4>
-        <form action="signIn" method="post">
+        <h4 class="text-center mb-4 text-primary">Email Validiation</h4>
+        <form action="conform" method="post">
             <div class="mb-3">
-                <label for="IdUser" class="form-label">User ID</label>
-                <input type="text" class="form-control" id="IdUser" name="idID" placeholder="Enter your user ID" value="${dto.userId}">
-                <div class="text-danger">${erro7}</div>
+                <span style="color:green">${err10}</span>
+                <span style="color:red">${err11}</span>
+                <label for="emaiID" class="form-label">Email Id(For Validiation)</label>
+                <input type="email" class="form-control" id="emaiID" name="emailEmail" placeholder="Enter your Email Id" value="${dto.email}">
+
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="passWord" placeholder="Enter your password" value="${dto.password}">
-            </div>
-            <div class="mb-3 text-end">
-                <a href="forgetPassword.jsp" class="text-decoration-none small">Forgot Password?</a>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Sign In</button>
-            <div class="text-success mt-3 text-center">${error8}</div>
+            <button type="submit" class="btn btn-primary w-100">Check</button>
+
         </form>
     </div>
 </div>
