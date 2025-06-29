@@ -26,6 +26,7 @@
             <div class="mb-3">
                 <span style="color:green">${err10}</span>
                 <span style="color:red">${err11}</span>
+                <span style="color:red">${err11}</span>
                 <label for="emaiID" class="form-label">Email Id(For Validiation)</label>
                 <input type="email" class="form-control" id="emaiID" name="emailEmail" placeholder="Enter your Email Id" value="${dto.email}">
 
