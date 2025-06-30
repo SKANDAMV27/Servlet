@@ -24,6 +24,12 @@
         <h4 class="text-center mb-4 text-primary">Reset Password</h4>
         <form action="ResetPassword" method="post">
             <div class="mb-3">
+                <span style="color:green">${error12}</span>
+                <label for="emailID" class="form-label" >Email Id</label>
+                <input type="email" class="form-control" id="emailID" name="emailEmail" placeholder="Enter The Valid Email" value="${dto.email}">
+            </div>
+
+            <div class="mb-3">
                 <span style="color:red">${err10}</span>
                 <span style="color:green">${err12}</span>
 

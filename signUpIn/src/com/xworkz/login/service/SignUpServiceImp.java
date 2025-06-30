@@ -66,4 +66,15 @@ public class SignUpServiceImp implements SignUpService {
         }
 
     }
+
+    @Override
+    public boolean checkEmailValidiation(String email, String password, String conformPassword) {
+        return false;
+    }
+
+    @Override
+    public boolean resetPassword(String email, String password, String conformPassword) {
+        SignUpRepositry signUpRepositry = new SignUpRepositryImp();
+        return signUpRepositry.conformValidiation(email,password,conformPassword);
+    }
 }

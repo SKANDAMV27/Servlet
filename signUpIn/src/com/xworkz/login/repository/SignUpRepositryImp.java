@@ -152,8 +152,8 @@ public class SignUpRepositryImp implements SignUpRepositry{
             preparedStatement.setString(1,password);
             preparedStatement.setString(2,email);
 
-            ResultSet resultSet =preparedStatement.executeQuery();
-            if(resultSet.next()){
+            int updateRows =preparedStatement.executeUpdate();
+            if(updateRows>0){
                 System.out.println("Sucess fully");
                 return true;
             }
@@ -164,6 +164,11 @@ public class SignUpRepositryImp implements SignUpRepositry{
         }
         return false;
 
+    }
+
+    @Override
+    public boolean conformValidiation(String email, String password, String conformPassword) {
+        return false;
     }
 
 

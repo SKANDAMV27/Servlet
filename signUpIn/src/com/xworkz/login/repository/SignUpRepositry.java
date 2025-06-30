@@ -16,7 +16,11 @@ public interface SignUpRepositry {
 
        public boolean validateLogin(int userId, String password);
 
-        public boolean conformValidiation(String email);
+        //public boolean conformValidiation(String email);
 
         public  boolean restPasswordValidiation(String password, String email,String conformPassword);
+
+    boolean conformValidiation(String email, String password, String conformPassword);
+
+    boolean conformValidiation(String email);
 }

@@ -12,4 +12,8 @@ public interface SignUpService {
     public boolean checkEmailValidiation(String email);
 
     public String setPasswordValidation(String password, String conformPassword) throws SQLException, ClassNotFoundException;
+
+    boolean checkEmailValidiation(String email, String password, String conformPassword);
+
+    boolean resetPassword(String email,String password,String conformPassword);
 }
