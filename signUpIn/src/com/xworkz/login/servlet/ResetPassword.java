@@ -38,11 +38,11 @@ public class ResetPassword extends HttpServlet {
 
             if(result.equals("Invalid Password"))
             {
-                System.out.println("Password Dont match.");
-                String erro12 = "password dont Match...";
+                System.out.println("Sucessfullt Update The Password");
+                String erro12 = "Sucessfullt Update The Password";
                 req.setAttribute("erro12",erro12);
                 req.setAttribute("dto",signUpDTO);
-                RequestDispatcher requestDispatcher = req.getRequestDispatcher("passWorldSet.jsp");
+                RequestDispatcher requestDispatcher = req.getRequestDispatcher("signIn.jsp");
                 requestDispatcher.forward(req,resp);
 
             }
@@ -51,14 +51,9 @@ public class ResetPassword extends HttpServlet {
             boolean update = signUpService.checkEmailValidiation(email,password,conformPassword);
 
             if(update){
-                String error12 ="Sucessfullt Update The Password";
+                System.out.println("Password Dont match");
+                String error12 ="Password donot match";
                 req.setAttribute("error12",error12);
-                req.setAttribute("dto",signUpDTO);
-                RequestDispatcher requestDispatcher = req.getRequestDispatcher("signIn.jsp");
-                requestDispatcher.forward(req,resp);
-            }else{
-                String error11 ="Some Error";
-                req.setAttribute("error12",error11);
                 req.setAttribute("dto",signUpDTO);
                 RequestDispatcher requestDispatcher = req.getRequestDispatcher("passWorldSet.jsp");
                 requestDispatcher.forward(req,resp);

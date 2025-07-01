@@ -57,7 +57,7 @@ public class SignUpServiceImp implements SignUpService {
         SignUpDTO signUpDTO = new SignUpDTO();
         String setPassword = signUpDTO.getPassword();
         if (setPassword == null || !password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()]).{8,}$") || password.length() < 8) {
-            System.out.println("PassWord Must Be 8 Characture...");
+            System.out.println("Password Correct");
             return "Invalid Password";
         } else {
             signUpRepositry.save(signUpDTO);

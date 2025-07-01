@@ -3,6 +3,8 @@ package com.xworkz.login.repository;
 import com.xworkz.login.dto.SignUpDTO;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SignUpRepositryImp implements SignUpRepositry{
     @Override
@@ -138,33 +140,57 @@ public class SignUpRepositryImp implements SignUpRepositry{
 
     }
 
+
+
     @Override
-    public boolean restPasswordValidiation(String password, String email,String conformPassword) {
-        System.out.println("Dry Test For the password Reset.......");
+    public boolean restPasswordValidiation(String password, String email, String conformPassword) {
+        System.out.println("Dry Test For the password Reset...");
+
+        // Check if password and confirm password match
+        if (password == null || !password.equals(conformPassword)) {
+            System.out.println("❌ Password and Confirm Password do not match");
+            return false;
+        }
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/formdb";
             String user = "root";
-            String passwor = "9353193240";
-            Connection connection=DriverManager.getConnection(url,user,passwor);
-            String sql = "UPDATE login_details SET password=? WHERE email=?";
-            PreparedStatement preparedStatement=connection.prepareStatement(sql);
-            preparedStatement.setString(1,password);
-            preparedStatement.setString(2,email);
+            String dbPassword = "9353193240";
 
-            int updateRows =preparedStatement.executeUpdate();
-            if(updateRows>0){
-                System.out.println("Sucess fully");
+            connection = DriverManager.getConnection(url, user, dbPassword);
+
+            String sql = "UPDATE login_details SET password = ? WHERE email = ?";
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, password);
+            preparedStatement.setString(2, email);
+
+            int updatedRows = preparedStatement.executeUpdate();
+            if (updatedRows > 0) {
+                System.out.println("✅ Password reset successfully for: " + email);
                 return true;
+            } else {
+                System.out.println("❌ No user found with email: " + email);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            // Always close resources in finally block
+            try {
+                if (preparedStatement != null) preparedStatement.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return false;
-
     }
+
 
     @Override
     public boolean conformValidiation(String email, String password, String conformPassword) {

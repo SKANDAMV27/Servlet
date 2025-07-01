@@ -30,8 +30,8 @@
             </div>
 
             <div class="mb-3">
-                <span style="color:red">${err10}</span>
-                <span style="color:green">${err12}</span>
+                <span style="color:red">${error12}</span>
+                <span style="color:green">${erro12}</span>
 
                 <label for="password" class="form-label">password</label>
                 <input type="password" class="form-control" id="password" name="passworPassword" placeholder="Enter The Password" value="${dto.password}">

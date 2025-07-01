@@ -3,6 +3,7 @@ package com.xworkz.login.repository;
 import com.xworkz.login.dto.SignUpDTO;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public interface SignUpRepositry {
         public void save(SignUpDTO signUpDTO) throws ClassNotFoundException, SQLException;
@@ -23,4 +24,6 @@ public interface SignUpRepositry {
     boolean conformValidiation(String email, String password, String conformPassword);
 
     boolean conformValidiation(String email);
+
+
 }
