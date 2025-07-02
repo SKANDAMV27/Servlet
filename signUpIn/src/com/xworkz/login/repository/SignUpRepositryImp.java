@@ -146,9 +146,9 @@ public class SignUpRepositryImp implements SignUpRepositry{
     public boolean restPasswordValidiation(String password, String email, String conformPassword) {
         System.out.println("Dry Test For the password Reset...");
 
-        // Check if password and confirm password match
+
         if (password == null || !password.equals(conformPassword)) {
-            System.out.println("❌ Password and Confirm Password do not match");
+            System.out.println(" Password and Confirm Password do not match");
             return false;
         }
 
@@ -170,10 +170,10 @@ public class SignUpRepositryImp implements SignUpRepositry{
 
             int updatedRows = preparedStatement.executeUpdate();
             if (updatedRows > 0) {
-                System.out.println("✅ Password reset successfully for: " + email);
+                System.out.println(" Password reset successfully for: " + email);
                 return true;
             } else {
-                System.out.println("❌ No user found with email: " + email);
+                System.out.println(" No user found with email: " + email);
             }
 
         } catch (SQLException | ClassNotFoundException e) {
