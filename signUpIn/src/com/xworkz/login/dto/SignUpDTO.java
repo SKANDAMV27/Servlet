@@ -56,7 +56,7 @@ public class SignUpDTO implements Serializable {
                 "email='" + email + '\'' +
                 ", userId=" + userId +
                 ", password='" + password + '\'' +
-                ", conformPassword='" + conformPassword + '\'' +
+                ", EmailServlet='" + conformPassword + '\'' +
                 '}';
     }
 }

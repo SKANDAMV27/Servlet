@@ -24,21 +24,14 @@
         <h4 class="text-center mb-4 text-primary">Reset Password</h4>
         <form action="ResetPassword" method="post">
             <div class="mb-3">
-                <span style="color:green">${error12}</span>
-                <label for="emailID" class="form-label" >Email Id</label>
-                <input type="email" class="form-control" id="emailID" name="emailEmail" placeholder="Enter The Valid Email" value="${dto.email}">
-            </div>
-
-            <div class="mb-3">
-                <span style="color:red">${error12}</span>
-                <span style="color:green">${erro12}</span>
+                <span style="color:red">${error}</span>
 
                 <label for="password" class="form-label">password</label>
-                <input type="password" class="form-control" id="password" name="passworPassword" placeholder="Enter The Password" value="${dto.password}">
+                <input type="password" class="form-control" id="password" name="passworPassword" placeholder="Enter The Password" >
             </div>
             <div class="mb-3">
                 <label for="conformPassword" class="form-label">conform password</label>
-                <input type="password" class="form-control" id="conformPassword" name="passworConform" placeholder="Enter The Conform Password" value="${dto.conformPassword}">
+                <input type="password" class="form-control" id="conformPassword" name="passworConform" placeholder="Enter The Conform Password" >
             </div>
             <button type="submit" class="btn btn-primary w-100" >Sign In</button>
 
