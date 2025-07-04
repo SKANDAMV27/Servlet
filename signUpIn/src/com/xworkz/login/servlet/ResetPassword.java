@@ -44,47 +44,6 @@ public class ResetPassword extends HttpServlet {
             requestDispatcher.forward(req,resp);
         }
 
-
-
-
-
-//        try {
-//            String result=signUpService.setPasswordValidation(password,EmailServlet);
-//
-//
-//            if(result.equals("Invalid Password"))
-//            {
-//                System.out.println("Sucessfullt Update The Password");
-//                String erro12 = "Sucessfullt Update The Password";
-//                req.setAttribute("erro12",erro12);
-//                req.setAttribute("dto",signUpDTO);
-//                RequestDispatcher requestDispatcher = req.getRequestDispatcher("signIn.jsp");
-//                requestDispatcher.forward(req,resp);
-//
-//            }
-//
-//
-//            boolean update = signUpService.checkEmailValidiation(email,password,EmailServlet);
-//
-//            if(update){
-//                System.out.println("Password Dont match");
-//                String error12 ="Password donot match";
-//                req.setAttribute("error12",error12);
-//                req.setAttribute("dto",signUpDTO);
-//                RequestDispatcher requestDispatcher = req.getRequestDispatcher("passWorldSet.jsp");
-//                requestDispatcher.forward(req,resp);
-//            }
-//
-//
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        } catch (ClassNotFoundException e) {
-//            throw new RuntimeException(e);
-//        }
-
-
-
-
     }
 
 }
