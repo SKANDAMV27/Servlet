@@ -3,6 +3,7 @@ package com.xworkz.login.repository;
 import com.xworkz.login.dto.SignUpDTO;
 
 import java.sql.SQLException;
+import java.util.Collection;
 
 
 public interface SignUpRepositry {
@@ -18,6 +19,8 @@ public interface SignUpRepositry {
     void updatePassword(String email, String password);
 
     boolean conformValidiation(String email);
+
+    Collection<SignUpDTO> fetchAll();
 
 
 }

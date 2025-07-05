@@ -5,6 +5,7 @@ import com.xworkz.login.repository.SignUpRepositry;
 import com.xworkz.login.repository.SignUpRepositryImp;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class SignUpServiceImp implements SignUpService {
 
@@ -61,5 +62,12 @@ public class SignUpServiceImp implements SignUpService {
         }
 
         return false;
+    }
+
+    @Override
+    public List<SignUpDTO> fetchAll() {
+        SignUpRepositry signUpRepositry = new SignUpRepositryImp();
+        System.out.println("Display All The Data ");
+        return (List<SignUpDTO>) signUpRepositry.fetchAll();
     }
 }

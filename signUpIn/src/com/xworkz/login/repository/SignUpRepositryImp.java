@@ -3,6 +3,8 @@ package com.xworkz.login.repository;
 import com.xworkz.login.dto.SignUpDTO;
 
 import java.sql.*;
+import java.util.Collection;
+import java.util.List;
 
 
 public class SignUpRepositryImp implements SignUpRepositry{
@@ -133,6 +135,38 @@ public class SignUpRepositryImp implements SignUpRepositry{
         }
         return true;
 
+    }
+
+    @Override
+    public Collection<SignUpDTO> fetchAll() {
+        System.out.println("Dry Testing For Fetch The Data: ");
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/formdb";
+            String user = "root";
+            String password = "9353193240";
+            Connection connection=DriverManager.getConnection(url,user,password);
+            String sql = "Select * from login_details";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+               //int id = resultSet.getInt("Id");
+               String email = resultSet.getString("email");
+               int user_id = Integer.parseInt(resultSet.getString("user_Id"));
+               String passwords = resultSet.getString("password");
+
+               SignUpDTO signUpDTO = new SignUpDTO();
+               signUpDTO.setUserId(user_id);
+               signUpDTO.setEmail("email");
+               signUpDTO.setPassword("passwords");
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+        return List.of();
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.xworkz.login.service;
 import com.xworkz.login.dto.SignUpDTO;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public interface SignUpService {
     String validation(SignUpDTO signUpDTO) throws SQLException, ClassNotFoundException;
@@ -13,4 +14,6 @@ public interface SignUpService {
 
 
     boolean resetPassword(String email, String password, String conformPassword);
+
+    List<SignUpDTO> fetchAll();
 }
