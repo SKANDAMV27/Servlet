@@ -33,7 +33,7 @@ public class SignInServlet extends HttpServlet {
             String erro7="valid User Id and password";
             req.setAttribute("erro7",erro7);
             req.setAttribute("dto",signUpDTO);
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("Display.jsp");
             requestDispatcher.forward(req,resp);
         }else {
             String error8 ="Invalid User Id and password.";

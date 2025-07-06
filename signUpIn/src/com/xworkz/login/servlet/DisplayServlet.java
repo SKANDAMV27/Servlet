@@ -20,13 +20,11 @@ public class DisplayServlet extends HttpServlet {
             SignUpService signUpService = new SignUpServiceImp();
 
 
-
-
-
             List<SignUpDTO> list = signUpService.fetchAll();
+
             req.setAttribute("display",list);
 
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("SignIn.jsp");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("display.jsp");
             requestDispatcher.forward(req,resp);
         }
     }
