@@ -19,7 +19,7 @@ public class DisplayServlet extends HttpServlet {
 
             SignUpService signUpService = new SignUpServiceImp();
 
-        System.out.println("Enter The  Number:");
+
             List<SignUpDTO> list = signUpService.fetchAll();
 
             req.setAttribute("display",list);
