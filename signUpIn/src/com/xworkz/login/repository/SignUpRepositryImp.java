@@ -157,9 +157,11 @@ public class SignUpRepositryImp implements SignUpRepositry{
 
                SignUpDTO signUpDTO = new SignUpDTO();
                signUpDTO.setUserId(user_id);
-               signUpDTO.setEmail("email");
-               signUpDTO.setPassword("passwords");
+               signUpDTO.setEmail(email);
+               signUpDTO.setPassword(passwords);
+               fetchAll().add(signUpDTO);
             }
+            connection.close();
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
