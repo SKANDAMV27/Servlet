@@ -21,7 +21,7 @@ public class DisplayServlet extends HttpServlet {
 
 
             List<SignUpDTO> list = signUpService.fetchAll();
-        System.out.println("Enter The Number:");
+
             req.setAttribute("display",list);
 
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("display.jsp");
