@@ -24,6 +24,7 @@ public class DisplayServlet extends HttpServlet {
 
             req.setAttribute("display",list);
 
+            //Chaining
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("display.jsp");
             requestDispatcher.forward(req,resp);
         }
