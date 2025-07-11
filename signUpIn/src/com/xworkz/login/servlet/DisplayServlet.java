@@ -21,7 +21,7 @@ public class DisplayServlet extends HttpServlet {
 
 
             List<SignUpDTO> list = signUpService.fetchAll();
-
+        System.out.println();
             req.setAttribute("display",list);
 
             //Chaining
